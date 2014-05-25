@@ -1,0 +1,35 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Chatbuilder</title>
+    <script src="http://chatbuilder.hackreactor.com/ChatBuilder.js"></script>
+  </head>
+  <body><!--
+SUCCESS!
+
+This is an HTML comment. It starts out as a string, but passing that string to jQuery's .prepend() method for the 'body' element addeds it into the DOM tree. As a result, the browser builds a new DOM comment node and inserts it as a child of the body. Comment nodes are invisible to the end user, but you could use the same technique to insert something visible, like the string `'<p>hello world!</p>'`
+
+Making such DOM modifications doesn't alter the source code of the HTML file, just the current state of the DOM tree (and as a result, the user-visible screen). Even the comment you're reading right now is a "dynamically-added" DOM element. If you inspect the original page source for this HTML file, you'll notice that this text is different from what's written there.
+
+You're done with the tour of Chrome's basic developer features, it's time to look at some JavaScript! Modify the source code of your `.html` file to say Chat.guide.start() in stead of Chat.guide.intro(), then refresh the page.
+-->
+
+    <!--
+Nice, you found the elements panel! From here, you can inspect the current state of the DOM tree, which is what controls everything your users see on the screen. At first, this DOM tree is built from the code in the original `.html` file, but it can be updated and changed at any time with JavaScript.
+
+To see what I mean, click ->HERE<- and then press escape a few times slowly. The console window should open and close. Try typing this line of code into that console:
+
+jQuery('body').prepend( Chat.guide.now_keep_your_eyes_on_the_elements_panel );
+-->
+
+    <h2>Borken Chat</h2>
+
+    <input class="draft" type="text"> <button class="send" disabled="">Send</button>
+
+    <ul class="messages">
+      <!-- once you save this code to a local `.html` file, you can delete these 3 fake, hard-coded li elements -->
+  
+    </ul>
+
+  
+
+</body></html>
