@@ -1,0 +1,3 @@
+Chat.guide(3)
+Hook the two together
+* Using these two functions, and a bit more code, you can build an app that displays the most recent messages available from the server every time you refresh the page. 
