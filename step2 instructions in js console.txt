@@ -1,0 +1,8 @@
+Way to go finding the developer console. Guess you're a developer! You can type any JavaScript code you want in here and it will be evaluated immediately, just as if it was part of the original application's source code. If you're new to the console, try entering some simple javascript expressions like  3 * 3 + 1 , or  alert('Hello World!') . Otherwise, go check out the  elements  panel, where you'll find the line of code you should enter here to continue.
+
+The console is a way to interact in real-time with your browser's JavaScript runtime environment. Typically, you run JavaScript by adding code to a file that runs when you open the page in a browser, but the console is a great place for lightweight trial-and-error,
+
+Note that anything you run in the console will only have an effect on that particular session, not on any subsequent reloads of the page. In order to have a lasting effect on your chat application, you must alter the contents of the  <script>  tag within your  .html  file, save it, and then refresh it in the browser.
+
+When you're comfortable using the console to evaluate simple JavaScript statements, go check out the  elements  panel, where you'll find the next step of your tutorial. ChatBuilder.js:11
+event.returnValue is deprecated. Please use the standard event.preventDefault() instead.
