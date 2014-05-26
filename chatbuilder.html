@@ -32,9 +32,22 @@
        *  hard to build this material and publishing solutions diminishes its effectiveness.
        */
 
-      Chat.guide.start();
+      //Chat.guide.start();
 
       // Your JavaScript code will go right here!
+      //$(#button).click()
+
+var arr = [];
+Chat.fetch(callback(arr));
+
+function callback(arr) {
+     $(window).unload(function() {
+     Chat.display(arr)})
+};
+
+
+
+
     </script>
 
     <h2>Borken Chat</h2>

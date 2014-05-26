@@ -5,8 +5,18 @@ We've provided 3 helper functions that can do most of the work for you at first,
 Ok, get started! You'll need to complete each of the following steps, probably in this order since each one builds on the previous.
 
 1. Experiment with the  Chat.display()  helper
+* Play in the developer console until you can get it to show an example message in the user-facing viewport.
+*  Chat.display()  takes a string as its only input, and displays that string to the user in a bulleted list.
+*  Chat.display()  won't work unless there is a  ul  element visible on the page with the class  messages . 
+
 2. Experiment with the  Chat.fetch()  helper
+* This function downloads the most recent messages from the server and makes them available to you.
+* Note that it is asyncronous in nature, so it doesn't return anything. Instead, it accepts a function as its only argument.  (When a function is passed as an argument, we call it a 'callback'.)
+* When  .fetch()  is done fetching messages from the server, it will call your callback function, passing an array of strings as the only argument to the callback. Each string in that array is the text value of one chat message. 
+
 3. Hook the two together
+* Using these two functions, and a bit more code, you can build an app that displays the most recent messages available from the server every time you refresh the page. 
+
 4. Set your app up to refresh the list of messages every 3 seconds.
 5. Experiment with the  Chat.send()  helper
 6. Allow the user to enter their own chat messages via the input box.
