@@ -37,14 +37,7 @@
       // Your JavaScript code will go right here!
       //$(#button).click()
 
-var arr = [];
-
-Chat.fetch(callback(arr));
-
-function callback(arr) {
-     $(window).unload(function() {
-     Chat.display(arr)})
-};
+    Chat.fetch(function (x){Chat.display(x)})
 
 
 
