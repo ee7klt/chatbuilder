@@ -37,10 +37,16 @@
       // Your JavaScript code will go right here!
       //$(#button).click()
 
-   Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
+   var fetchChats = function() {
+      
+      Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
       x.forEach(function(part,index,arr) {
         Chat.display(part)
-      })});
+      })
+    });
+ }
+
+ setInterval(fetchChats(),3000);
 
 
 
