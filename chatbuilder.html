@@ -37,7 +37,10 @@
       // Your JavaScript code will go right here!
       //$(#button).click()
 
-    Chat.fetch(function (x){Chat.display(x)})
+   Chat.fetch(function (x){
+      x.forEach(function(part,index,arr) {
+        Chat.display(part)
+      })});
 
 
 
