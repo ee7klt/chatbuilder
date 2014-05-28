@@ -36,9 +36,10 @@
 
       // Your JavaScript code will go right here!
       //$(#button).click()
-
-   var fetchChats = function() {
-      
+var i=0;
+   var refreshChats = function() {
+      $(".messages").empty();
+      Chat.send(i++)
       Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
       x.forEach(function(part,index,arr) {
         Chat.display(part)
@@ -46,7 +47,7 @@
     });
  }
 
- setInterval(fetchChats(),3000);
+ setInterval(refreshChats(),3000);
 
 
 
