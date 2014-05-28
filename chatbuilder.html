@@ -39,7 +39,7 @@
 var i=0;
    var refreshChats = function() {
       $(".messages").empty();     //clear messages
-      Chat.send(i++)              //add running number to messages to keep track of refreshes
+      //Chat.send(i++)              //add running number to messages to keep track of refreshes
       Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
       x.forEach(function(part,index,arr) {       //print each message on separate line
         Chat.display(part)
@@ -47,8 +47,16 @@ var i=0;
     });
  }
 
- setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
+ //setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
 
+
+//disable send button unless there is text in the input field.
+$('button[class="send"]').attr('disabled','disabled');
+$('input[class="draft"]').keyup(function() {
+        if($(this).val() != '') {
+           $('button[class="send"]').removeAttr('disabled');
+        }
+     });
 
 
 
