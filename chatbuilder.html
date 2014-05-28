@@ -51,6 +51,8 @@
  //setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
 
 $(document).ready( function() {
+
+  setInterval(refreshChats,3000); 
 //disable send button unless there is text in the input field.
 $('button[class="send"]').attr('disabled','disabled');
 $('input[class="draft"]').keyup(function() {
@@ -58,7 +60,17 @@ $('input[class="draft"]').keyup(function() {
            $('button[class="send"]').removeAttr('disabled');
         }
      });
+
+//allow user to send chats to server
+ $('#button').click(function() {
+        var toAdd = $('input[class=draft]').val();
+        Chat.send(toAdd);
+    })
+
+
+
 });
+
 
 
     </script>
