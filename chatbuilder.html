@@ -36,7 +36,8 @@
 
       // Your JavaScript code will go right here!
       //$(#button).click()
-var i=0;
+
+
    var refreshChats = function() {
       $(".messages").empty();     //clear messages
       //Chat.send(i++)              //add running number to messages to keep track of refreshes
@@ -49,7 +50,7 @@ var i=0;
 
  //setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
 
-
+$(document).ready( function() {
 //disable send button unless there is text in the input field.
 $('button[class="send"]').attr('disabled','disabled');
 $('input[class="draft"]').keyup(function() {
@@ -57,7 +58,7 @@ $('input[class="draft"]').keyup(function() {
            $('button[class="send"]').removeAttr('disabled');
         }
      });
-
+});
 
 
     </script>
