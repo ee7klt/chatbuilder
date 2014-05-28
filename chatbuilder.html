@@ -38,16 +38,16 @@
       //$(#button).click()
 var i=0;
    var refreshChats = function() {
-      $(".messages").empty();
-      Chat.send(i++)
+      $(".messages").empty();     //clear messages
+      Chat.send(i++)              //add running number to messages to keep track of refreshes
       Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
-      x.forEach(function(part,index,arr) {
+      x.forEach(function(part,index,arr) {       //print each message on separate line
         Chat.display(part)
       })
     });
  }
 
- setInterval(refreshChats(),3000);
+ setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
 
 
 
