@@ -62,7 +62,8 @@ $('input[class="draft"]').keyup(function() {
      });
 
 //allow user to send chats to server
- $('#button').click(function() {
+//cannot use $('#button') or $('.class') have to use $('button[class="send"]'). WHY?
+ $('button[class="send"]').click(function() {
         var toAdd = $('input[class=draft]').val();
         Chat.send(toAdd);
     })
