@@ -39,12 +39,17 @@
 
 delete Chat.display;
 
+//display messages as li elements within messages class ul
+var display = function (message) {
+  $('.messages').append("<li>" +message + "</li>");
+}
+
    var refreshChats = function() {
       $(".messages").empty();     //clear messages
       //Chat.send(i++)              //add running number to messages to keep track of refreshes
       Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
       x.forEach(function(part,index,arr) {       //print each message on separate line
-        Chat.display(part)
+        display(part)                //removed Chat.display and replaced it with my own display function
       })
     });
  }
