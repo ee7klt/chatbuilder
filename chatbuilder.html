@@ -45,21 +45,41 @@ var display = function (message) {
   $('.messages').append("<li>" +message + "</li>");
 }
 
-   var refreshChats = function() {
-      $(".messages").empty();     //clear messages
-      //Chat.send(i++)              //add running number to messages to keep track of refreshes
-      Chat.fetch(function (x){    //Anonymous callback baby yeah!!!!
-      x.forEach(function(part,index,arr) {       //print each message on separate line
-        display(part)                //removed Chat.display and replaced it with my own display function
-      })
-    });
- }
+
+
+var refreshChats = function(){
+  $(".messages").empty();
+  $.ajax({
+    url : 'https://api.parse.com/1/classes/chats',
+      type : 'GET',
+      dataType: 'JSON',
+      contentType: 'application/json',
+      data: JSON.stringify ({
+        test: 'value: '
+      }),
+      error : function(data) {
+          console.log('error');
+      },
+      success : function(data) {
+          console.log('success', data);
+          $.each(data['results'], function(i,item) {
+            display(item.text);
+          })
+          
+      }
+  })
+}
+
+
 
  //setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
 
 $(document).ready( function() {
 
-  setInterval(refreshChats,3000); 
+
+
+setInterval(refreshChats,3000);
+ // setInterval(refreshChats,3000); 
 //disable send button unless there is text in the input field.
 $('button[class="send"]').attr('disabled','disabled');
 $('input[class="draft"]').keyup(function() {
