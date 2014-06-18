@@ -55,9 +55,6 @@ var refreshChats = function(){
       type : 'GET',
       dataType: 'JSON',
       contentType: 'application/json',
-      data: JSON.stringify ({
-        test: 'value: '
-      }),
       error : function(data) {
           console.log('error');
       },
@@ -112,7 +109,7 @@ $('input[class="draft"]').keyup(function() {
 //cannot use $('#button') or $('.class') have to use $('button[class="send"]'). WHY?
  $('button[class="send"]').click(function() {
         var toAdd = $('input[class=draft]').val();
-        Chat.send(toAdd);
+        send(toAdd);
     })
 
 
