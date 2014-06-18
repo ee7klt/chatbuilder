@@ -39,6 +39,7 @@
 
 delete Chat.display;
 delete Chat.fetch;
+delete Chat.send;
 
 //display messages as li elements within messages class ul
 var display = function (message) {
@@ -70,6 +71,25 @@ var refreshChats = function(){
   })
 }
 
+var send = function(themessage){
+  
+  $.ajax({
+    url : 'https://api.parse.com/1/classes/chats',
+      type : 'POST',
+      dataType: 'JSON',
+      contentType: 'application/json',
+      data: JSON.stringify ({
+        "text": themessage
+      }),
+      error : function(data) {
+          console.log('error');
+      },
+      success : function(data) {
+          console.log('success', data);
+          
+      }
+  })
+}
 
 
  //setInterval(refreshChats,3000);        //problem was here. I had to remove the () after refreshChats to get it to continuously refresh!!
